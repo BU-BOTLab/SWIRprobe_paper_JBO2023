@@ -1,0 +1,1 @@
+Instructions for running SWIR vs. NIR simulations from the paper titled "A shortwave infrared diffuse optical wearable probe for quantification of water and lipid content in emulsion phantoms using deep learning
