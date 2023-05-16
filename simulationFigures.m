@@ -4,16 +4,16 @@ clear all
 save_on = 0; % set to 1 to automate saving of figures
 %% Load data and compute errors
 % load DNN-derived water and lipid estimates from csv files (saved from Python scripts)
-SWIR_rec = csvread('outputDNN_SWIR_allScat_sumToOne_n1p435_g0p7_3000eps_noise5p.csv'); 
-NIR_rec = csvread('outputDNN_NIR_allScat_sumToOne_n1p435_g0p7_3000eps_noise5p.csv');
+SWIR_rec = csvread('DNN_SWIR_estimates.csv'); 
+NIR_rec = csvread('DNN_NIR_estimates.csv');
 
 % load ground truth water and lipid concentrations from test dataset files
-SWIR_true = load('R_SWIR_test_MC_snell_allScat_sumToOne_n1p435_g0p7_noise.mat');
-NIR_true = load('R_NIR_test_MC_snell_allScat_sumToOne_n1p435_g0p7_noise.mat');
+SWIR_true = load('R_SWIR_test_MC.mat');
+NIR_true = load('R_NIR_test_MC.mat');
 
 % load loss function data from DNN training
-SWIR_loss = csvread('outputDNN_SWIR_allScat_sumToOne_n1p435_g0p7_3000eps_loss.csv');
-NIR_loss = csvread('outputDNN_NIR_allScat_sumToOne_n1p435_g0p7_3000eps_loss.csv');
+SWIR_loss = csvread('DNN_SWIR_loss.csv');
+NIR_loss = csvread('DNN_NIR_loss.csv');
 
 % convert from volume fraction to volume percentage 
 water_true = 100*SWIR_true.water; % ground truth water
